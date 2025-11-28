@@ -2,8 +2,9 @@ import { writable, type Writable } from 'svelte/store';
 import type { IndentedComment, UserMenuItem, MediaProgressReport } from '@/types';
 import type { VideoListDefItem } from '@/lib/asset_browser/types';
 import * as Proto3 from '@clapshot_protobuf/typescript';
+import type { ClientConfig } from './config';
 
-export let clientConfig: Writable<any> = writable(null);
+export let clientConfig: Writable<ClientConfig|null> = writable(null);
 
 export let mediaFileId: Writable<string|null> = writable(null);
 export let curVideo: Writable<Proto3.MediaFile|null> = writable(null);
